@@ -55,7 +55,7 @@ pip install networkx matplotlib
 
 
 ### ▶️ Run the Program
-
+```bash
 python main.py
 
 Graph_Checker/
