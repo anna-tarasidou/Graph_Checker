@@ -25,14 +25,15 @@ This project uses the **Havel–Hakimi Theorem** to determine whether a degree s
 ### 🔍 Havel–Hakimi Theorem (Simplified)
 
 A non-increasing sequence of non-negative integers  
-&nbsp;&nbsp;&nbsp;&nbsp;\( d_1 \geq d_2 \geq \dots \geq d_n \)  
-is graphic **if and only if** the sequence obtained by:
+  **( d₁ ≥ d₂ ≥ ... ≥ dₙ )**  
+is **graphic** (i.e., it can represent the degree sequence of a simple undirected graph) **if and only if** the following recursive process ends in a sequence of all zeros:
 
-- removing the first term \( d_1 \),
-- subtracting 1 from the next \( d_1 \) terms,
+1. Remove the first term **d₁**.
+2. Subtract 1 from each of the next **d₁** terms.
+3. If any value becomes negative, the sequence is **not graphic**.
+4. Repeat the process with the new sequence.
 
-is also a graphic sequence, as long as no negative values appear.  
-This process continues recursively.
+If the process completes without producing negative numbers and results in all zeros, the original sequence is **graphic**.
 
 #### Result:
 - ✅ All values become 0 → the sequence is **graphic**
