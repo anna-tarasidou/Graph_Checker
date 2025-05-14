@@ -50,8 +50,17 @@ The `is_graphic()` function is a direct implementation of this algorithm.
 git clone https://github.com/anna-tarasidou/graph-degree-checker.git
 cd graph-degree-checker
 
+---
+
+### 2. Install dependencies
+
+```bash
 pip install networkx matplotlib
 
+---
+
+### ▶️ Run the Program
+```bash
 python main.py
 
 Graph_Checker/
@@ -63,7 +72,7 @@ Graph_Checker/
 ├── main.py                # Main entry point
 └── README.md              # Project documentation
 
-## 📌 To-Do
+### 📌 To-Do
 
 - [ ] Extend support for different graph types:
   - [ ] Directed graphs
