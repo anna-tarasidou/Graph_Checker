@@ -1,61 +1,48 @@
-# 🎯 Graph Degree Sequence Generator & Visualizer
+## 🎯 Graph Degree Sequence Generator & Visualizer
+#### Author: Anna Tarasidou
 
-A simple yet powerful Python tool that:
-
-- ✅ Generates a random degree sequence for a graph of a given order
-- ✅ Checks whether the sequence is *graphic* (i.e., realizable as a simple undirected graph)
-- ✅ Constructs the corresponding graph if the sequence is graphic
-- ✅ Visualizes the graph using `networkx` and `matplotlib`
+### Overview
+A terminal-based Python tool for exploring the relationship between degree sequences and graph construction.
+It provides an interactive way to understand and visualize graphic sequences through clean and modular code.
 
 ---
+### Features
+- Generates a random degree sequence for a graph of a chosen order
+- Checks whether the sequence is graphic (i.e., realizable as a simple undirected graph)
+- Constructs the corresponding graph if the sequence is valid
+- Visualizes the result using NetworkX and Matplotlib
 
-## 💡 Example Usage
+### 💡 Example Usage
 
-1. User enters the desired graph order (e.g., 6 nodes)
-2. A random degree sequence is generated
-3. The sequence is checked for graphicity using the **Havel–Hakimi algorithm**
-4. If the sequence is graphic, the graph is constructed and displayed
-
+1. The user enters the desired graph order (e.g., 6 nodes).
+2. A random degree sequence is generated.
+3. The Havel–Hakimi algorithm checks if the sequence is graphic.
+4. If valid, the graph is automatically constructed and displayed.
 ---
 
-## 📐 How Graphicity Is Checked
-
-This project uses the **Havel–Hakimi Theorem** to determine whether a degree sequence is *graphic* — i.e., whether it can represent a simple undirected graph.
+### 📐 How Graphicity Is Determined
+This project implements the **Havel–Hakimi Theorem** to verify whether a degree sequence can represent a simple undirected graph.
 
 ### 🔍 Havel–Hakimi Theorem (Simplified)
 
-A non-increasing sequence of non-negative integers  
-  **( d₁ ≥ d₂ ≥ ... ≥ dₙ )**  
-is **graphic** (i.e., it can represent the degree sequence of a simple undirected graph) **if and only if** the following recursive process ends in a sequence of all zeros:
+Given a non-increasing sequence of non-negative integers **(d₁ ≥ d₂ ≥ ... ≥ dₙ)**,
+the sequence is graphic if the following recursive process ends with all zeros:
 
-1. Remove the first term **d₁**.
-2. Subtract 1 from each of the next **d₁** terms.
-3. If any value becomes negative, the sequence is **not graphic**.
-4. Repeat the process with the new sequence.
+1. Remove the first term d₁.
+2. Subtract 1 from each of the next d₁ terms.
+3. If any term becomes negative → the sequence is not graphic.
+4. Repeat until all values are zero.
 
-If the process completes without producing negative numbers and results in all zeros, the original sequence is **graphic**.
+**Outcome:**
 
-#### Result:
-- ✅ All values become 0 → the sequence is **graphic**
-- ❌ A negative value appears or not enough elements to subtract from → the sequence is **not graphic**
+All zeros → Graphic sequence
 
-The `is_graphic()` function is a direct implementation of this algorithm.
+Negative or incomplete step → Not graphic
+
+The `is_graphic()` function provides a direct and efficient implementation of this process.
 
 ---
-## 🚀 Installation
-
-
-## 1. Clone the repository
-
-git clone https://github.com/anna-tarasidou/graph-degree-checker.git
-cd graph-degree-checker
-
-## 2. Install dependencies
-
-pip install networkx matplotlib
-
-
-### ▶️ Run the Program
+### 📂 Project Structure
 ```bash
 python main.py
 
@@ -68,11 +55,11 @@ Graph_Checker/
 ├── main.py                # Main entry point
 └── README.md              # Project documentation
 
-### 📌 To-Do
+```
+### ⚙️ Requirements
+Requires **networkx** and **matplotlib**
 
-- [ ] Extend support for different graph types:
-  - [ ] Directed graphs
-  - [ ] Graphs with self-loops
-  - [ ] Multigraphs
-- [ ] Add user options to check graphicity under specific categories
-- [ ] Improve visualization options
+### ▶️ Run the Program
+```bash
+python main.py
+```
